@@ -8,6 +8,15 @@ ns: BRAIN
 void TASK_PLANT_BOMB(Ped ped, float x, float y, float z, float heading);
 ```
 
+```
+This should be used after GIVE_WEAPON_TO_PED, with a weapon like a bomb.
+Example:
+local myPed = PlayerPedId()
+local loc = GetOffsetFromEntityInWorldCoords(myPed, 0.0, 0.0, 0.0)
+local heading = GetEntityHeading(myPed)
+GiveWeaponToPed(myPed, GetHashKey("WEAPON_STICKYBOMB"), 1000, 1, 1)
+TaskPlantBomb(myPed, loc.x, loc.y, loc.z, heading)
+```
 
 ## Parameters
 * **ped**: 
